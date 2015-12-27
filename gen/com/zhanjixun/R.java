@@ -223,6 +223,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int backgroundStacked=0x7f010030;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int borderRadius=0x7f01006e;
         /**  A style that may be applied to Buttons placed within a
          LinearLayout with the style buttonBarStyle to form a button bar. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -749,6 +759,17 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int titleTextStyle=0x7f01002a;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>circle</code></td><td>0</td><td></td></tr>
+<tr><td><code>round</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int type=0x7f01006f;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -858,10 +879,13 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f050002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f060003;
+        public static final int abc_search_url_text_holo=0x7f060006;
         public static final int abc_search_url_text_normal=0x7f060000;
         public static final int abc_search_url_text_pressed=0x7f060002;
         public static final int abc_search_url_text_selected=0x7f060001;
+        public static final int black=0x7f060004;
+        public static final int page_bg=0x7f060005;
+        public static final int theme=0x7f060003;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -947,8 +971,7 @@ containing a value of this type.
  Minimum width of the search view text entry area. 
          */
         public static final int abc_search_view_text_min_width=0x7f07000c;
-        /**  Default screen margins, per the Android Design guidelines. 
-
+        /** 
          Example customization of dimensions originally defined in res/values/dimens.xml
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
@@ -988,6 +1011,7 @@ containing a value of this type.
          (the screen is in portrait). This may be either a fraction or a dimension.
          */
         public static final int dialog_fixed_width_minor=0x7f070012;
+        public static final int roundImageViewRadius=0x7f070017;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -1077,67 +1101,73 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int common_progressbar=0x7f020057;
+        public static final int ic_launcher=0x7f020058;
+        public static final int loading_dialog_style=0x7f020059;
+        public static final int message_dialog_bg=0x7f02005a;
     }
     public static final class id {
-        public static final int action_bar=0x7f09001c;
+        public static final int action_bar=0x7f09001e;
         public static final int action_bar_activity_content=0x7f090001;
-        public static final int action_bar_container=0x7f09001b;
-        public static final int action_bar_overlay_layout=0x7f09001f;
-        public static final int action_bar_root=0x7f09001a;
-        public static final int action_bar_subtitle=0x7f090023;
-        public static final int action_bar_title=0x7f090022;
-        public static final int action_context_bar=0x7f09001d;
+        public static final int action_bar_container=0x7f09001d;
+        public static final int action_bar_overlay_layout=0x7f090021;
+        public static final int action_bar_root=0x7f09001c;
+        public static final int action_bar_subtitle=0x7f090025;
+        public static final int action_bar_title=0x7f090024;
+        public static final int action_context_bar=0x7f09001f;
         public static final int action_menu_divider=0x7f090002;
         public static final int action_menu_presenter=0x7f090003;
-        public static final int action_mode_close_button=0x7f090024;
-        public static final int activity_chooser_view_content=0x7f090025;
+        public static final int action_mode_close_button=0x7f090026;
+        public static final int activity_chooser_view_content=0x7f090027;
         public static final int always=0x7f09000f;
         public static final int beginning=0x7f090016;
-        public static final int checkbox=0x7f09002d;
+        public static final int checkbox=0x7f09002f;
+        public static final int circle=0x7f09001a;
         public static final int collapseActionView=0x7f090010;
-        public static final int default_activity_button=0x7f090028;
+        public static final int default_activity_button=0x7f09002a;
         public static final int dialog=0x7f090014;
         public static final int disableHome=0x7f090009;
         public static final int dropdown=0x7f090015;
-        public static final int edit_query=0x7f090030;
+        public static final int edit_query=0x7f090032;
         public static final int end=0x7f090017;
-        public static final int expand_activities_button=0x7f090026;
-        public static final int expanded_menu=0x7f09002c;
+        public static final int expand_activities_button=0x7f090028;
+        public static final int expanded_menu=0x7f09002e;
         public static final int home=0x7f090000;
         public static final int homeAsUp=0x7f09000a;
-        public static final int icon=0x7f09002a;
+        public static final int icon=0x7f09002c;
         public static final int ifRoom=0x7f090011;
-        public static final int image=0x7f090027;
+        public static final int image=0x7f090029;
         public static final int listMode=0x7f090006;
-        public static final int list_item=0x7f090029;
+        public static final int list_item=0x7f09002b;
+        public static final int loading_dialog_text=0x7f09003e;
         public static final int middle=0x7f090018;
         public static final int never=0x7f090012;
         public static final int none=0x7f090019;
         public static final int normal=0x7f090007;
         public static final int progress_circular=0x7f090004;
         public static final int progress_horizontal=0x7f090005;
-        public static final int radio=0x7f09002f;
-        public static final int search_badge=0x7f090032;
-        public static final int search_bar=0x7f090031;
-        public static final int search_button=0x7f090033;
-        public static final int search_close_btn=0x7f090038;
-        public static final int search_edit_frame=0x7f090034;
-        public static final int search_go_btn=0x7f09003a;
-        public static final int search_mag_icon=0x7f090035;
-        public static final int search_plate=0x7f090036;
-        public static final int search_src_text=0x7f090037;
-        public static final int search_voice_btn=0x7f09003b;
-        public static final int shortcut=0x7f09002e;
+        public static final int radio=0x7f090031;
+        public static final int round=0x7f09001b;
+        public static final int search_badge=0x7f090034;
+        public static final int search_bar=0x7f090033;
+        public static final int search_button=0x7f090035;
+        public static final int search_close_btn=0x7f09003a;
+        public static final int search_edit_frame=0x7f090036;
+        public static final int search_go_btn=0x7f09003c;
+        public static final int search_mag_icon=0x7f090037;
+        public static final int search_plate=0x7f090038;
+        public static final int search_src_text=0x7f090039;
+        public static final int search_voice_btn=0x7f09003d;
+        public static final int shortcut=0x7f090030;
         public static final int showCustom=0x7f09000b;
         public static final int showHome=0x7f09000c;
         public static final int showTitle=0x7f09000d;
-        public static final int split_action_bar=0x7f09001e;
-        public static final int submit_area=0x7f090039;
+        public static final int split_action_bar=0x7f090020;
+        public static final int submit_area=0x7f09003b;
         public static final int tabMode=0x7f090008;
-        public static final int title=0x7f09002b;
-        public static final int top_action_bar=0x7f090020;
-        public static final int up=0x7f090021;
+        public static final int title=0x7f09002d;
+        public static final int top_action_bar=0x7f090022;
+        public static final int up=0x7f090023;
         public static final int useLogo=0x7f09000e;
         public static final int withText=0x7f090013;
     }
@@ -1192,7 +1222,9 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_main=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int loading_dialog=0x7f030019;
+        public static final int my_listview_bottom=0x7f03001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1442,6 +1474,7 @@ containing a value of this type.
         public static final int Widget_AppCompat_ProgressBar=0x7f0b000a;
         public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f0b0009;
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0b0022;
+        public static final int loadingDialog=0x7f0b008d;
     }
     public static final class styleable {
         /**  ============================================ 
@@ -2663,6 +2696,54 @@ containing a value of this type.
           @attr name android:windowAnimationStyle
         */
         public static final int MenuView_android_windowAnimationStyle = 0;
+        /** Attributes that can be used with a RoundImageView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #RoundImageView_borderRadius com.zhanjixun:borderRadius}</code></td><td></td></tr>
+           <tr><td><code>{@link #RoundImageView_type com.zhanjixun:type}</code></td><td></td></tr>
+           </table>
+           @see #RoundImageView_borderRadius
+           @see #RoundImageView_type
+         */
+        public static final int[] RoundImageView = {
+            0x7f01006e, 0x7f01006f
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.zhanjixun.R.attr#borderRadius}
+          attribute's value can be found in the {@link #RoundImageView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.zhanjixun:borderRadius
+        */
+        public static final int RoundImageView_borderRadius = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.zhanjixun.R.attr#type}
+          attribute's value can be found in the {@link #RoundImageView} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>circle</code></td><td>0</td><td></td></tr>
+<tr><td><code>round</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name com.zhanjixun:type
+        */
+        public static final int RoundImageView_type = 1;
         /** Attributes that can be used with a SearchView.
            <p>Includes the following attributes:</p>
            <table>
