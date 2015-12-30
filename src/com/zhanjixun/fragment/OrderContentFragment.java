@@ -24,7 +24,7 @@ public class OrderContentFragment extends Fragment {
 	}
 
 	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
+	public void onActivityCreated(Bundle bundle) {
+		super.onActivityCreated(bundle);
 	}
 }

@@ -50,7 +50,7 @@ public class AsyncHttpTask extends AsyncTask<Object, Intent, String> {
 			}
 
 		} catch (Exception e) {
-			LogCat.e(e.toString());
+			LogCat.error(e.toString());
 		}
 		return "";
 	}

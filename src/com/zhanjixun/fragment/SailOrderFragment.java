@@ -13,7 +13,6 @@ import com.zhanjixun.activity.MainActivity;
 
 public class SailOrderFragment extends Fragment implements OnClickListener {
 	private TextView sailTv;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

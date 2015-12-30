@@ -21,7 +21,7 @@ public class AsyncBlurImageTask extends AsyncTask<String, Void, Bitmap> {
 				url + LoadImage.BLUR_KEY);
 
 		if (null != bitmap) {
-			LogCat.v(bitmap.toString());
+			LogCat.verbose(bitmap.toString());
 			bitmap = BitmapUtils.getBitmap(bitmap, view.getMeasuredWidth(),
 					view.getMeasuredHeight());
 			((ImageView) view).setImageBitmap(bitmap);

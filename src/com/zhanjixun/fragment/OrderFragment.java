@@ -1,9 +1,15 @@
 package com.zhanjixun.fragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +47,8 @@ public class OrderFragment extends Fragment {
 	private int currIndex = 0;
 	private TextView sailTv;
 
+	private ViewPager mViewPager;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -52,13 +60,6 @@ public class OrderFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 		activity = (MainActivity) getActivity();
 		initViews();
-		initData();
-	}
-
-	private void initData() {
-		setFragmentContent(0);
-		cursorAnimation(0);
-		setTextViewColor(0);
 	}
 
 	private void initViews() {
@@ -93,8 +94,26 @@ public class OrderFragment extends Fragment {
 		matrix.postTranslate(offset, 0);
 		cursor.setImageMatrix(matrix);
 
+		// ViewPager
+		mViewPager = (ViewPager) getView().findViewById(
+				R.id.viewPager_order_content);
+		List<Fragment> fragments = new ArrayList<Fragment>();
+		fragments.add(ocf0);
+		fragments.add(ocf1);
+		fragments.add(ocf2);
+		fragments.add(ocf3);
+		fragments.add(ocf4);
+		mViewPager.setAdapter(new ViewPagerAdpter(getChildFragmentManager(),
+				fragments));
+		mViewPager.setOnPageChangeListener(new ViewPagerOnPageChangeListener());
 		// textView
 		sailTv = (TextView) getView().findViewById(R.id.text_order_sail);
+		sailTv.setVisibility(View.GONE);
+		try {
+
+		} catch (Exception e) {
+
+		}
 		sailTv.setOnClickListener(new OnSailTextViewClickListener());
 	}
 
@@ -116,40 +135,11 @@ public class OrderFragment extends Fragment {
 
 		@Override
 		public void onClick(View v) {
-			setFragmentContent(index);
 			cursorAnimation(index);
 			setTextViewColor(index);
+			mViewPager.setCurrentItem(index);
 		}
 
-	}
-
-	private void setFragmentContent(int index) {
-
-		FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-		switch (index) {
-		case 0:
-			ft.replace(R.id.order_content, ocf0);
-			ft.commit();
-			break;
-		case 1:
-			ft.replace(R.id.order_content, ocf1);
-			ft.commit();
-			break;
-		case 2:
-			ft.replace(R.id.order_content, ocf2);
-			ft.commit();
-			break;
-		case 3:
-			ft.replace(R.id.order_content, ocf3);
-			ft.commit();
-			break;
-		case 4:
-			ft.replace(R.id.order_content, ocf4);
-			ft.commit();
-			break;
-		default:
-			break;
-		}
 	}
 
 	private void cursorAnimation(int index) {
@@ -234,4 +224,44 @@ public class OrderFragment extends Fragment {
 		}
 	}
 
+	private class ViewPagerAdpter extends FragmentPagerAdapter {
+
+		List<Fragment> fragments = null;
+
+		public ViewPagerAdpter(FragmentManager fm, List<Fragment> fragments) {
+			super(fm);
+			this.fragments = fragments;
+		}
+
+		@Override
+		public Fragment getItem(int arg0) {
+			return fragments.get(arg0);
+		}
+
+		@Override
+		public int getCount() {
+			return fragments.size();
+		}
+	}
+
+	private class ViewPagerOnPageChangeListener implements OnPageChangeListener {
+
+		@Override
+		public void onPageSelected(int i) {
+
+			cursorAnimation(i);
+			currIndex = i;
+			setTextViewColor(i);
+		}
+
+		@Override
+		public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+		}
+
+		@Override
+		public void onPageScrollStateChanged(int arg0) {
+
+		}
+	}
 }

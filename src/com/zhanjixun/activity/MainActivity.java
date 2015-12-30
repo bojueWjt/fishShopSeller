@@ -8,11 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zhanjixun.R;
+import com.zhanjixun.data.Constants;
+import com.zhanjixun.domain.User;
 import com.zhanjixun.fragment.MainFragment;
 import com.zhanjixun.fragment.MeFragment;
 import com.zhanjixun.fragment.OrderFragment;
 import com.zhanjixun.fragment.SailOrderFragment;
-import com.zhanjixun.utils.LogCat;
+import com.zhanjixun.utils.SPUtil;
 
 public class MainActivity extends FragmentActivity {
 
@@ -33,8 +35,18 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		// 初始化软件设置
+		initSoftwareData();
+
 		initViews();
 		initData();
+	}
+
+	private void initSoftwareData() {
+		// 读取用户信息
+		Constants.user = User.getUserFormSP(this);
+
+		
 	}
 
 	private void initViews() {

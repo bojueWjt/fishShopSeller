@@ -40,15 +40,15 @@ public class HttpConnection {
 
 		String GETMethodURL = HttpUtils.getGETMethodQueryString(url, parames);
 		String result = null;
-		LogCat.v(GETMethodURL);
+		LogCat.verbose(GETMethodURL);
 		HttpURLConnection connection = getDefultHttpURLConnection(GETMethodURL,
 				"GET");
 		connection.connect();
 		if (connection.getResponseCode() == 200) {
 			result = HttpUtils.getResponseAsString(connection.getInputStream());
-			LogCat.v(result);
+			LogCat.verbose(result);
 		} else {
-			LogCat.v("«Î«Û ß∞‹£∫" + connection.getResponseCode());
+			LogCat.verbose("«Î«Û ß∞‹£∫" + connection.getResponseCode());
 		}
 		return result;
 	}
@@ -64,15 +64,15 @@ public class HttpConnection {
 		}
 		connection.connect();
 		int responseCode = connection.getResponseCode();
-		LogCat.d(responseCode + "");
+		LogCat.debug(responseCode + "");
 		if (responseCode == 200) {
 			result = HttpUtils.getResponseAsString(connection.getInputStream(),
 					"UTF-8");
-			LogCat.v(url);
-			LogCat.v(parames != null ? parames.toString() : "");
-			LogCat.v(result);
+			LogCat.verbose(url);
+			LogCat.verbose(parames != null ? parames.toString() : "");
+			LogCat.verbose(result);
 		} else {
-			LogCat.v("«Î«Û ß∞‹£∫" + responseCode);
+			LogCat.verbose("«Î«Û ß∞‹£∫" + responseCode);
 		}
 		return result;
 	}
@@ -106,7 +106,7 @@ public class HttpConnection {
 				}
 				return true;
 			} else {
-				LogCat.v(responseCode + "");
+				LogCat.verbose(responseCode + "");
 				return false;
 			}
 		} catch (IOException e) {

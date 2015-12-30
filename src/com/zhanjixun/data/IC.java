@@ -23,31 +23,31 @@ public class IC {
 
 	public void setBlurForegound(Context context, String url, View view) {
 		if (url == null) {
-			LogCat.w("url=null");
+			LogCat.warn("url=null");
 			return;
 		}
 		String imgURL = projectUrl + "/" + url;
-		LogCat.v(imgURL);
+		LogCat.verbose(imgURL);
 		new AsyncBlurImageTask(view, context, imgURL);
 	}
 
 	public void setForegound(String url, ImageView view) {
 		if (url == null) {
-			LogCat.w("url=null");
+			LogCat.warn("url=null");
 			return;
 		}
 		String imgURL = projectUrl + "/" + url;
-		LogCat.v(imgURL);
+		LogCat.verbose(imgURL);
 		new AsyncImageTask(imgURL, view, AsyncImageTask.SET_BITMAP_FOREGROUND);
 	}
 
 	public void setBackground(String url, View view) {
 		if (url == null) {
-			LogCat.w("url=null");
+			LogCat.warn("url=null");
 			return;
 		}
 		String imgURL = projectUrl + "/" + url;
-		LogCat.v(imgURL);
+		LogCat.verbose(imgURL);
 		new AsyncImageTask(imgURL, view, AsyncImageTask.SET_BITMAP_BACKGROUND);
 	}
 }

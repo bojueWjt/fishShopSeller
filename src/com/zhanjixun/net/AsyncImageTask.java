@@ -25,7 +25,7 @@ public class AsyncImageTask extends AsyncTask<String, Integer, Bitmap> {
 		Bitmap bitmap = LoadImage.getInstance().getBitmapFromLruCache(url);
 
 		if (null != bitmap) {
-			LogCat.v(bitmap.toString());
+			LogCat.verbose(bitmap.toString());
 			bitmap = BitmapUtils.getBitmap(bitmap, view.getMeasuredWidth(),
 					view.getMeasuredHeight());
 			if (SET_BITMAP_BACKGROUND == type) {
@@ -46,7 +46,7 @@ public class AsyncImageTask extends AsyncTask<String, Integer, Bitmap> {
 	@Override
 	protected Bitmap doInBackground(String... params) {
 		String urlStr = params[0];
-		LogCat.v(urlStr);
+		LogCat.verbose(urlStr);
 		Bitmap bitmap = LoadImage.getInstance().getBitmap(urlStr);
 		return bitmap;
 	}
