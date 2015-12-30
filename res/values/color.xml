@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="theme">#F55718</color>
+    <color name="theme_normal">#939393</color>
+    <color name="theme_pressed">#AB3D11</color>
+    <color name="black">#3e3a3a</color>
+    <color name="page_bg">#EAEAEA</color>
+    <color name="white">#FFFFFF</color>
+
+</resources>

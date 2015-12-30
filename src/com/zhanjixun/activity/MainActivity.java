@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zhanjixun.R;
 import com.zhanjixun.fragment.MainFragment;
 import com.zhanjixun.fragment.MeFragment;
 import com.zhanjixun.fragment.OrderFragment;
