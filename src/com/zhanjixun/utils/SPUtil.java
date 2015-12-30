@@ -28,7 +28,7 @@ public class SPUtil {
 				Context.MODE_PRIVATE);
 
 		boolean delete = sp.edit().clear().commit();
-		MyLog.v("É¾³ýSharedPreferences:" + delete);
+		LogCat.v("É¾³ýSharedPreferences:" + delete);
 		return delete;
 	}
 }

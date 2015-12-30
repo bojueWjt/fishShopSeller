@@ -5,7 +5,6 @@
     android:orientation="vertical" >
 
     <FrameLayout
-        android:id="@+id/title_car"
         style="@style/TitleTheme"
         android:layout_alignParentTop="true" >
 
@@ -16,14 +15,15 @@
 
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+        android:padding="30dp" >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="30dp" >
+            android:layout_height="match_parent" >
 
             <ImageView
+                android:id="@+id/image_main_add_good"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -33,10 +33,9 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="30dp" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
             <GridView
                 android:layout_width="match_parent"

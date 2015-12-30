@@ -2,7 +2,7 @@ package com.zhanjixun.utils;
 
 import android.util.Log;
 
-public class MyLog {
+public class LogCat {
 
 	public static void i(String msg) {
 		String tag = new Throwable().getStackTrace()[1].getClassName() + "."

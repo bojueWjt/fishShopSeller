@@ -12,6 +12,7 @@ import com.zhanjixun.fragment.MainFragment;
 import com.zhanjixun.fragment.MeFragment;
 import com.zhanjixun.fragment.OrderFragment;
 import com.zhanjixun.fragment.SailOrderFragment;
+import com.zhanjixun.utils.LogCat;
 
 public class MainActivity extends FragmentActivity {
 
@@ -112,9 +113,13 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 
-	public void setSailOrder() {
+	public void setSailOrderFragment() {
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 		ft.replace(R.id.main_content, sailOrderFragment);
 		ft.commit();
+	}
+
+	public void setOrderFragment() {
+		setContent(1);
 	}
 }

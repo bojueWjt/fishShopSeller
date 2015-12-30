@@ -3,6 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
+    <FrameLayout style="@style/TitleTheme" >
+
+        <TextView
+            android:id="@+id/text_sailorder_outsail"
+            style="@style/TitleRightTheme"
+            android:text="退出航行模式" />
+    </FrameLayout>
 
 </LinearLayout>

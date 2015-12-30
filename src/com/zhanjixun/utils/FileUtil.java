@@ -105,7 +105,7 @@ public class FileUtil {
 
 	public static void storeBitmap(String path, Bitmap image) {
 		if (path == null) {
-			MyLog.e("Error creating media file, check storage permissions: ");
+			LogCat.e("Error creating media file, check storage permissions: ");
 			return;
 		}
 		try {
@@ -113,9 +113,9 @@ public class FileUtil {
 			image.compress(Bitmap.CompressFormat.PNG, 90, fos);
 			fos.close();
 		} catch (FileNotFoundException e) {
-			MyLog.d("File not found: " + e.getMessage());
+			LogCat.d("File not found: " + e.getMessage());
 		} catch (IOException e) {
-			MyLog.d("Error accessing file: " + e.getMessage());
+			LogCat.d("Error accessing file: " + e.getMessage());
 		}
 	}
 

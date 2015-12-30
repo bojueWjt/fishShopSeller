@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import com.zhanjixun.data.LoadImage;
 import com.zhanjixun.utils.BitmapUtils;
-import com.zhanjixun.utils.MyLog;
+import com.zhanjixun.utils.LogCat;
 
 public class AsyncBlurImageTask extends AsyncTask<String, Void, Bitmap> {
 	private View view;
@@ -21,7 +21,7 @@ public class AsyncBlurImageTask extends AsyncTask<String, Void, Bitmap> {
 				url + LoadImage.BLUR_KEY);
 
 		if (null != bitmap) {
-			MyLog.v(bitmap.toString());
+			LogCat.v(bitmap.toString());
 			bitmap = BitmapUtils.getBitmap(bitmap, view.getMeasuredWidth(),
 					view.getMeasuredHeight());
 			((ImageView) view).setImageBitmap(bitmap);

@@ -13,7 +13,7 @@ import com.zhanjixun.data.Constants;
 import com.zhanjixun.domain.BaseResult;
 import com.zhanjixun.interfaces.OnDataReturnListener;
 import com.zhanjixun.utils.MyGson;
-import com.zhanjixun.utils.MyLog;
+import com.zhanjixun.utils.LogCat;
 import com.zhanjixun.utils.StringUtil;
 
 public class AsyncHttpTask extends AsyncTask<Object, Intent, String> {
@@ -50,7 +50,7 @@ public class AsyncHttpTask extends AsyncTask<Object, Intent, String> {
 			}
 
 		} catch (Exception e) {
-			MyLog.e(e.toString());
+			LogCat.e(e.toString());
 		}
 		return "";
 	}

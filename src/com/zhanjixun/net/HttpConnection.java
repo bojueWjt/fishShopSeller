@@ -14,7 +14,7 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import com.zhanjixun.utils.HttpUtils;
-import com.zhanjixun.utils.MyLog;
+import com.zhanjixun.utils.LogCat;
 
 public class HttpConnection {
 
@@ -40,15 +40,15 @@ public class HttpConnection {
 
 		String GETMethodURL = HttpUtils.getGETMethodQueryString(url, parames);
 		String result = null;
-		MyLog.v(GETMethodURL);
+		LogCat.v(GETMethodURL);
 		HttpURLConnection connection = getDefultHttpURLConnection(GETMethodURL,
 				"GET");
 		connection.connect();
 		if (connection.getResponseCode() == 200) {
 			result = HttpUtils.getResponseAsString(connection.getInputStream());
-			MyLog.v(result);
+			LogCat.v(result);
 		} else {
-			MyLog.v("«Î«Û ß∞‹£∫" + connection.getResponseCode());
+			LogCat.v("«Î«Û ß∞‹£∫" + connection.getResponseCode());
 		}
 		return result;
 	}
@@ -64,15 +64,15 @@ public class HttpConnection {
 		}
 		connection.connect();
 		int responseCode = connection.getResponseCode();
-		MyLog.d(responseCode + "");
+		LogCat.d(responseCode + "");
 		if (responseCode == 200) {
 			result = HttpUtils.getResponseAsString(connection.getInputStream(),
 					"UTF-8");
-			MyLog.v(url);
-			MyLog.v(parames != null ? parames.toString() : "");
-			MyLog.v(result);
+			LogCat.v(url);
+			LogCat.v(parames != null ? parames.toString() : "");
+			LogCat.v(result);
 		} else {
-			MyLog.v("«Î«Û ß∞‹£∫" + responseCode);
+			LogCat.v("«Î«Û ß∞‹£∫" + responseCode);
 		}
 		return result;
 	}
@@ -106,7 +106,7 @@ public class HttpConnection {
 				}
 				return true;
 			} else {
-				MyLog.v(responseCode + "");
+				LogCat.v(responseCode + "");
 				return false;
 			}
 		} catch (IOException e) {
