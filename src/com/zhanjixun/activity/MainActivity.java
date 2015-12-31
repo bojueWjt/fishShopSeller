@@ -14,6 +14,7 @@ import com.zhanjixun.fragment.MainFragment;
 import com.zhanjixun.fragment.MeFragment;
 import com.zhanjixun.fragment.OrderFragment;
 import com.zhanjixun.fragment.SailOrderFragment;
+import com.zhanjixun.utils.LogCat;
 import com.zhanjixun.utils.SPUtil;
 
 public class MainActivity extends FragmentActivity {
@@ -45,8 +46,9 @@ public class MainActivity extends FragmentActivity {
 	private void initSoftwareData() {
 		// 读取用户信息
 		Constants.user = User.getUserFormSP(this);
-
-		
+		// 航行状态设置
+		Constants.sailModel = Boolean.parseBoolean(SPUtil.getString(this,
+				Constants.SP_SAIL_MODEL, Constants.SP_SAIL_MODEL, "false"));
 	}
 
 	private void initViews() {
@@ -109,14 +111,19 @@ public class MainActivity extends FragmentActivity {
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 		switch (index) {
 		case 0:
+			LogCat.verbose("发布商品");
 			ft.replace(R.id.main_content, mainFragment);
 			ft.commit();
 			break;
 		case 1:
-			ft.replace(R.id.main_content, orderFragment);
-			ft.commit();
+			if (Constants.sailModel) {
+				setSailOrderFragment();
+			} else {
+				setOrderFragment();
+			}
 			break;
 		case 2:
+			LogCat.verbose("商家信息");
 			ft.replace(R.id.main_content, meFragment);
 			ft.commit();
 			break;
@@ -127,11 +134,15 @@ public class MainActivity extends FragmentActivity {
 
 	public void setSailOrderFragment() {
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+		LogCat.verbose("商品订单--航行模式");
 		ft.replace(R.id.main_content, sailOrderFragment);
 		ft.commit();
 	}
 
 	public void setOrderFragment() {
-		setContent(1);
+		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+		LogCat.verbose("商品订单--普通模式");
+		ft.replace(R.id.main_content, orderFragment);
+		ft.commit();
 	}
 }

@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 import com.zhanjixun.R;
 
-public class ReflashListView extends ListView implements OnScrollListener {
+public class ScrollViewReflashListView extends ListView implements OnScrollListener {
 	private int firstVisibleItemPosition; // 屏幕显示在第一个的item的索引
 	private int downY; // 按下时y轴的偏移量
 	private int headerViewHeight; // 头布局的高度
@@ -33,16 +33,26 @@ public class ReflashListView extends ListView implements OnScrollListener {
 	private int footerViewHeight; // 脚布局的高度
 	private boolean isLoadingMore = false; // 是否正在加载更多中
 
-	public ReflashListView(Context context) {
+	public ScrollViewReflashListView(Context context) {
 		super(context);
 	}
 
-	public ReflashListView(Context context, AttributeSet attrs) {
+	public ScrollViewReflashListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		initHeaderView();
 		initFooterView();
 
 		setOnScrollListener(this);
+	}
+
+	/**
+	 * 适应ScrollView
+	 */
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,
+				MeasureSpec.AT_MOST);
+		super.onMeasure(widthMeasureSpec, expandSpec);
 	}
 
 	/**

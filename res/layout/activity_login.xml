@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/login_backgroud"
+    android:orientation="vertical"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18" />
+
+    <FrameLayout
+        style="@style/TitleTheme"
+        android:layout_alignParentTop="true"
+        android:background="@color/white" >
+
+        <TextView
+            style="@style/TitleMiddleTheme"
+            android:text="海洋餐桌卖家版"
+            android:textColor="@color/theme" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="64"
+        android:alpha="0.87"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="25dp" >
+
+        <RelativeLayout
+            android:id="@+id/login_new_user_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/login_new_user_centre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="，" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/login_new_user_centre"
+                android:text="没有帐号"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/login_new_user_centre"
+                android:text="快速注册"
+                android:textColor="@color/theme"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/login_confirm"
+            style="@style/myButton"
+            android:layout_width="match_parent"
+            android:layout_above="@id/login_new_user_layout"
+            android:text="登录" />
+
+        <TextView
+            android:id="@+id/login_forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/login_confirm"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="25dp"
+            android:text="忘记密码？" />
+
+        <com.zhanjixun.views.LineEditText
+            style="@style/myEditText"
+            android:layout_alignParentTop="true"
+            android:text="手机号码" >
+        </com.zhanjixun.views.LineEditText>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18" />
+
+</LinearLayout>
