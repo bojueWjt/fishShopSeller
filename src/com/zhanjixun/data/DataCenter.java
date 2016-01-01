@@ -11,7 +11,6 @@ public class DataCenter {
 			Map<String, String> params, OnDataReturnListener dataReturnListener) {
 
 		new AsyncHttpTask(taskTag, dataReturnListener).execute(Constants.HOST
-				+ "/" + Constants.PROJECT + "/" + url, params,
-				AsyncHttpTask.POST);
+				+ "/" + Constants.PROJECT + "/" + url, params);
 	}
 }

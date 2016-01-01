@@ -42,8 +42,9 @@ public class MessageDialog {
 		dialog.setTitle(title);
 	}
 
-	public void setMessage(CharSequence msg) {
+	public MessageDialog setMessage(CharSequence msg) {
 		messageTv.setText(msg);
+		return this;
 	}
 
 	public void show() {

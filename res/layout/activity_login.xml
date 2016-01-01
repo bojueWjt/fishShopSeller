@@ -12,79 +12,94 @@
         android:layout_height="0dp"
         android:layout_weight="18" />
 
-    <FrameLayout
-        style="@style/TitleTheme"
-        android:layout_alignParentTop="true"
-        android:background="@color/white" >
-
-        <TextView
-            style="@style/TitleMiddleTheme"
-            android:text="海洋餐桌卖家版"
-            android:textColor="@color/theme" />
-    </FrameLayout>
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="64"
-        android:alpha="0.87"
-        android:background="@color/white"
-        android:orientation="vertical"
-        android:padding="25dp" >
+        android:background="#ddFFFFFF"
+        android:orientation="vertical" >
 
-        <RelativeLayout
-            android:id="@+id/login_new_user_layout"
+        <FrameLayout
+            style="@style/TitleTheme"
+            android:background="@color/white" >
+
+            <TextView
+                style="@style/TitleMiddleTheme"
+                android:text="海洋餐桌卖家版"
+                android:textColor="@color/theme" />
+        </FrameLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="20dp"
-            android:orientation="horizontal" >
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="25dp" >
+
+            <com.zhanjixun.views.LineEditText
+                android:id="@+id/login_username"
+                style="@style/myEditText"
+                android:hint="手机号码"
+                android:inputType="phone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <com.zhanjixun.views.LineEditText
+                android:id="@+id/login_password"
+                style="@style/myEditText"
+                android:hint="密码"
+                android:inputType="textPassword" />
 
             <TextView
-                android:id="@+id/login_new_user_centre"
+                android:id="@+id/login_forget_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="，" />
+                android:layout_gravity="end"
+                android:paddingBottom="25dp"
+                android:paddingTop="20dp"
+                android:text="忘记密码？" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/login_confirm"
+                style="@style/myButton"
+                android:layout_width="match_parent"
+                android:text="登录" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/login_new_user_centre"
-                android:text="没有帐号"
-                android:textSize="15dp" />
+                android:layout_alignParentBottom="true"
+                android:layout_margin="20dp"
+                android:orientation="horizontal" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/login_new_user_centre"
-                android:text="快速注册"
-                android:textColor="@color/theme"
-                android:textSize="15dp" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/login_new_user_centre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="，" />
 
-        <Button
-            android:id="@+id/login_confirm"
-            style="@style/myButton"
-            android:layout_width="match_parent"
-            android:layout_above="@id/login_new_user_layout"
-            android:text="登录" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/login_new_user_centre"
+                    android:layout_toStartOf="@id/login_new_user_centre"
+                    android:text="没有帐号"
+                    android:textSize="15dp" />
 
-        <TextView
-            android:id="@+id/login_forget_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/login_confirm"
-            android:layout_alignParentRight="true"
-            android:paddingBottom="25dp"
-            android:text="忘记密码？" />
-
-        <com.zhanjixun.views.LineEditText
-            style="@style/myEditText"
-            android:layout_alignParentTop="true"
-            android:text="手机号码" >
-        </com.zhanjixun.views.LineEditText>
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/login_new_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/login_new_user_centre"
+                    android:layout_toRightOf="@id/login_new_user_centre"
+                    android:text="快速注册"
+                    android:textColor="@color/theme"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"

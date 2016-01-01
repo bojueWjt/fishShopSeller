@@ -18,6 +18,7 @@
         android:layout_centerInParent="true" />
 
     <Button
+        android:id="@+id/fragment_no_user_login"
         style="@style/myButton"
         android:layout_width="150dp"
         android:layout_below="@id/fragment_no_user_centre"

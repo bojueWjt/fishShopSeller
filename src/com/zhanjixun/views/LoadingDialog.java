@@ -25,6 +25,7 @@ public class LoadingDialog extends Dialog {
 	private void initDialog() {
 		View v = View.inflate(getContext(), R.layout.loading_dialog, null);
 		msgTv = (TextView) v.findViewById(R.id.loading_dialog_text);
+		msgTv.setText("加载中...");
 		setContentView(v);
 		setCancelable(false);// 设置不可返回消失
 		setCanceledOnTouchOutside(false);// 设置不可按外部消失

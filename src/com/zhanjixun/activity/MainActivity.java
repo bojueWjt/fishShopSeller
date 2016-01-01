@@ -12,7 +12,6 @@ import com.zhanjixun.data.Constants;
 import com.zhanjixun.domain.User;
 import com.zhanjixun.factory.MeFragmentFactory;
 import com.zhanjixun.fragment.MainFragment;
-import com.zhanjixun.fragment.MeFragment;
 import com.zhanjixun.fragment.OrderFragment;
 import com.zhanjixun.fragment.SailOrderFragment;
 import com.zhanjixun.utils.LogCat;

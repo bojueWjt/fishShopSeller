@@ -22,11 +22,17 @@ public class AsyncHttpTask extends AsyncTask<Object, Intent, String> {
 	public static final String GET = "GET";
 
 	private String taskTag;
-
 	private OnDataReturnListener dataReturnListener;
+	private String method = "POST";
+
+	public AsyncHttpTask(String taskTag,
+			OnDataReturnListener dataReturnListener, String method) {
+		this.taskTag = taskTag;
+		this.method = method;
+		this.dataReturnListener = dataReturnListener;
+	}
 
 	public AsyncHttpTask(String taskTag, OnDataReturnListener dataReturnListener) {
-		super();
 		this.taskTag = taskTag;
 		this.dataReturnListener = dataReturnListener;
 	}
@@ -39,7 +45,6 @@ public class AsyncHttpTask extends AsyncTask<Object, Intent, String> {
 	@Override
 	protected String doInBackground(Object... executeParams) {
 		String url = (String) executeParams[0];
-		String method = (String) executeParams[2];
 		@SuppressWarnings("unchecked")
 		Map<String, String> parames = (Map<String, String>) executeParams[1];
 		try {
@@ -48,7 +53,6 @@ public class AsyncHttpTask extends AsyncTask<Object, Intent, String> {
 			} else {
 				return HttpConnection.doGETMethod(url, parames);
 			}
-
 		} catch (Exception e) {
 			LogCat.error(e.toString());
 		}
