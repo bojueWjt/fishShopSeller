@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <FrameLayout
+        style="@style/TitleTheme"
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            style="@style/TitleMiddleTheme"
+            android:text="商家信息" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/fragment_no_user_centre"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_centerInParent="true" />
+
+    <Button
+        style="@style/myButton"
+        android:layout_width="150dp"
+        android:layout_below="@id/fragment_no_user_centre"
+        android:layout_centerHorizontal="true"
+        android:text="登录" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fragment_no_user_centre"
+        android:layout_centerHorizontal="true"
+        android:text="你还有没登录"
+        android:textSize="@dimen/title_text_size" />
+
+</RelativeLayout>

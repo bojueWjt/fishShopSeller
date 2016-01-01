@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.zhanjixun.R;
 import com.zhanjixun.data.Constants;
 import com.zhanjixun.domain.User;
+import com.zhanjixun.factory.MeFragmentFactory;
 import com.zhanjixun.fragment.MainFragment;
 import com.zhanjixun.fragment.MeFragment;
 import com.zhanjixun.fragment.OrderFragment;
@@ -29,7 +30,6 @@ public class MainActivity extends FragmentActivity {
 
 	private final MainFragment mainFragment = new MainFragment();
 	private final OrderFragment orderFragment = new OrderFragment();
-	private final MeFragment meFragment = new MeFragment();
 	private final SailOrderFragment sailOrderFragment = new SailOrderFragment();
 
 	@Override
@@ -124,7 +124,7 @@ public class MainActivity extends FragmentActivity {
 			break;
 		case 2:
 			LogCat.verbose("商家信息");
-			ft.replace(R.id.main_content, meFragment);
+			ft.replace(R.id.main_content, MeFragmentFactory.getMeFragment());
 			ft.commit();
 			break;
 		default:

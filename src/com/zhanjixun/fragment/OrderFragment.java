@@ -188,7 +188,7 @@ public class OrderFragment extends Fragment {
 		}
 		currIndex = index;
 		animation.setFillAfter(true);// True:图片停在动画结束位置
-		animation.setDuration(150);
+		animation.setDuration(200);
 		cursor.startAnimation(animation);
 	}
 

@@ -9,7 +9,9 @@ import com.zhanjixun.utils.MyGson;
 import com.zhanjixun.utils.SPUtil;
 
 public class User {
-	
+	public static final int userType_fisherman = 1;
+	public static final int userType_farmer = 2;
+
 	private String userId;
 	private Integer userType;
 	private String identityId;
@@ -46,7 +48,8 @@ public class User {
 	}
 
 	/**
-	 * @param userId 要设置的 userId
+	 * @param userId
+	 *            要设置的 userId
 	 */
 	public void setUserId(String userId) {
 		this.userId = userId;
@@ -60,7 +63,8 @@ public class User {
 	}
 
 	/**
-	 * @param userType 要设置的 userType
+	 * @param userType
+	 *            要设置的 userType
 	 */
 	public void setUserType(Integer userType) {
 		this.userType = userType;
@@ -74,7 +78,8 @@ public class User {
 	}
 
 	/**
-	 * @param identityId 要设置的 identityId
+	 * @param identityId
+	 *            要设置的 identityId
 	 */
 	public void setIdentityId(String identityId) {
 		this.identityId = identityId;
@@ -88,7 +93,8 @@ public class User {
 	}
 
 	/**
-	 * @param state 要设置的 state
+	 * @param state
+	 *            要设置的 state
 	 */
 	public void setState(Integer state) {
 		this.state = state;
@@ -102,7 +108,8 @@ public class User {
 	}
 
 	/**
-	 * @param userName 要设置的 userName
+	 * @param userName
+	 *            要设置的 userName
 	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
@@ -116,7 +123,8 @@ public class User {
 	}
 
 	/**
-	 * @param phoneNumber 要设置的 phoneNumber
+	 * @param phoneNumber
+	 *            要设置的 phoneNumber
 	 */
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
@@ -130,7 +138,8 @@ public class User {
 	}
 
 	/**
-	 * @param headImage 要设置的 headImage
+	 * @param headImage
+	 *            要设置的 headImage
 	 */
 	public void setHeadImage(String headImage) {
 		this.headImage = headImage;
@@ -144,7 +153,8 @@ public class User {
 	}
 
 	/**
-	 * @param getAddressId 要设置的 getAddressId
+	 * @param getAddressId
+	 *            要设置的 getAddressId
 	 */
 	public void setGetAddressId(String getAddressId) {
 		this.getAddressId = getAddressId;
@@ -158,7 +168,8 @@ public class User {
 	}
 
 	/**
-	 * @param createTime 要设置的 createTime
+	 * @param createTime
+	 *            要设置的 createTime
 	 */
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
