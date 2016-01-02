@@ -63,7 +63,11 @@ public class OrderContentFragment extends Fragment implements
 	}
 
 	private void loadData() {
-		// dialog.show();
+		// 第一次加载数据显示进度条
+		if (index == 1) {
+			dialog.show();
+		}
+
 		switch (tag) {
 		case 0:
 			DC.getInstance().getShopAllOrders(this, shopId, page, index++);
@@ -100,7 +104,7 @@ public class OrderContentFragment extends Fragment implements
 
 	@Override
 	public void onDataReturn(String taskTag, BaseResult result, String json) {
-		// dialog.dismiss();
+		dialog.dismiss();
 		if (result.getServiceResult()) {
 			List<Order> orders = new ArrayList<Order>();
 			String ordersKey = result.getResultParam().get("ordersList");

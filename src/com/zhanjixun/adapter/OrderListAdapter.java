@@ -3,6 +3,7 @@ package com.zhanjixun.adapter;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zhanjixun.R;
+import com.zhanjixun.activity.OrderInfoActivity;
 import com.zhanjixun.data.IC;
 import com.zhanjixun.domain.Good;
 import com.zhanjixun.domain.Order;
@@ -93,8 +95,23 @@ public class OrderListAdapter extends BaseAdapter {
 		vh.allPiece.setText(UnitUtil.toRMB(order.getTotalprice()));
 		vh.postagePrice.setText("(∫¨‘À∑—"
 				+ UnitUtil.toRMB(order.getPostagePrice()) + ")");
-		// v.setOnClickListener(myOnClickListener);
+		v.setOnClickListener(new MyOnClickListener(order.getOrdersId()));
 		return v;
+	}
+
+	private class MyOnClickListener implements View.OnClickListener {
+		private String orderId;
+
+		public MyOnClickListener(String orderId) {
+			this.orderId = orderId;
+		}
+
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent(context, OrderInfoActivity.class);
+			intent.putExtra("orderId", orderId);
+			context.startActivity(intent);
+		}
 	}
 
 	final class ViewHolder {
