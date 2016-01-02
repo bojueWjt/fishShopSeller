@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.zhanjixun.R;
 import com.zhanjixun.data.Constants;
+import com.zhanjixun.domain.Shop;
 import com.zhanjixun.domain.User;
 import com.zhanjixun.factory.MeFragmentFactory;
 import com.zhanjixun.fragment.MainFragment;
@@ -27,9 +28,9 @@ public class MainActivity extends FragmentActivity {
 	private ImageView orderImg;
 	private ImageView mainImg;
 
-	private final MainFragment mainFragment = new MainFragment();
-	private final OrderFragment orderFragment = new OrderFragment();
-	private final SailOrderFragment sailOrderFragment = new SailOrderFragment();
+	private final static MainFragment mainFragment = new MainFragment();
+	private final static OrderFragment orderFragment = new OrderFragment();
+	private final static SailOrderFragment sailOrderFragment = new SailOrderFragment();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,8 @@ public class MainActivity extends FragmentActivity {
 
 	private void initSoftwareData() {
 		// 读取用户信息
-		Constants.user = User.getUserFormSP(this);
+		Constants.user = User.getInstance(this);
+		Constants.shop = Shop.getInstance(this);
 		// 航行状态设置
 		Constants.sailModel = Boolean.parseBoolean(SPUtil.getString(this,
 				Constants.SP_SAIL_MODEL, Constants.SP_SAIL_MODEL, "false"));

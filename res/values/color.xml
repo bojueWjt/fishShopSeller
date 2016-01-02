@@ -8,5 +8,6 @@
     <color name="page_bg">#EAEAEA</color>
     <color name="white">#FFFFFF</color>
     <color name="textColorHint">#535353</color>
+    <color name="text">#3A3A3A</color>
 
 </resources>

@@ -12,4 +12,9 @@
             android:text="退出航行模式" />
     </FrameLayout>
 
+    <com.zhanjixun.views.ReflashListView
+        android:id="@+id/fragment_sail_order_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>

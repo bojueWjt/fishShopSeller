@@ -8,7 +8,7 @@ import com.zhanjixun.data.Constants;
 import com.zhanjixun.utils.MyGson;
 import com.zhanjixun.utils.SPUtil;
 
-public class User {
+public class User{
 	public static final int userType_fisherman = 1;
 	public static final int userType_farmer = 2;
 
@@ -22,22 +22,19 @@ public class User {
 	private String getAddressId;
 	private Date createTime;
 
-	public boolean saveUserInfo(Context context) {
-		String userStr = MyGson.getInstance().toJson(this);
+	public boolean saveInstance(Context context) {
+		String spString = MyGson.getInstance().toJson(this);
 		return SPUtil.saveString(context, Constants.SP_USER, Constants.SP_USER,
-				userStr);
+				spString);
 	}
 
-	public static User getUserFormSP(Context context) {
-
+	public static User getInstance(Context context) {
+		String defValue = "";
 		String string = SPUtil.getString(context, Constants.SP_USER,
-				Constants.SP_USER, "");
-
-		User user = string.equals("") ? null : MyGson.getInstance().fromJson(
-				string, User.class);
-
-		return user;
-
+				Constants.SP_USER, defValue);
+		User bean = string.equals(defValue) ? null : MyGson.getInstance()
+				.fromJson(string, User.class);
+		return bean;
 	}
 
 	/**
@@ -174,4 +171,5 @@ public class User {
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
+
 }

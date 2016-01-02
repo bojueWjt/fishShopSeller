@@ -29,11 +29,11 @@ public class OrderFragment extends Fragment {
 
 	private MainActivity activity;
 
-	private final OrderContentFragment ocf0 = new OrderContentFragment(0);
-	private final OrderContentFragment ocf1 = new OrderContentFragment(1);
-	private final OrderContentFragment ocf2 = new OrderContentFragment(2);
-	private final OrderContentFragment ocf3 = new OrderContentFragment(3);
-	private final OrderContentFragment ocf4 = new OrderContentFragment(4);
+	private final OrderContentFragment ocf0 = new OrderContentFragment(0);//全部
+	private final OrderContentFragment ocf1 = new OrderContentFragment(1);//代付款
+	private final OrderContentFragment ocf2 = new OrderContentFragment(2);//待发货
+	private final OrderContentFragment ocf3 = new OrderContentFragment(3);//待收货
+	private final OrderContentFragment ocf4 = new OrderContentFragment(4);//待评价
 
 	private TextView t1;
 	private TextView t2;

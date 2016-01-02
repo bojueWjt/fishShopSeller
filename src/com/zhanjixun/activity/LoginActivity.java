@@ -15,6 +15,7 @@ import com.zhanjixun.data.Constants;
 import com.zhanjixun.data.DC;
 import com.zhanjixun.data.TaskTag;
 import com.zhanjixun.domain.BaseResult;
+import com.zhanjixun.domain.Shop;
 import com.zhanjixun.domain.User;
 import com.zhanjixun.interfaces.OnDataReturnListener;
 import com.zhanjixun.utils.MyGson;
@@ -36,10 +37,24 @@ public class LoginActivity extends Activity implements OnClickListener,
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if (isLoginIn()) {
+			toMainActivity();
+		}
 		setContentView(R.layout.activity_login);
 		msgDialog = new MessageDialog(this);
 		dialog = new LoadingDialog(this);
 		initViews();
+	}
+
+	private boolean isLoginIn() {
+		try {
+			// 测试用户信息是否存在
+			User.getInstance(this).getUserId();
+			return true;
+		} catch (Exception e) {
+			
+		}
+		return false;
 	}
 
 	private void initViews() {
@@ -97,20 +112,23 @@ public class LoginActivity extends Activity implements OnClickListener,
 		if (result.getServiceResult()) {
 			if (taskTag.equals(TaskTag.LOGIN)) {
 				try {
-
+					// 读取用户信息
 					String string = result.getResultParam().get("user");
 					User user = MyGson.getInstance().fromJson(string,
 							User.class);
 					Constants.user = user;
+					// 读取商店信息
+					String shopKey = result.getResultParam().get("shop");
+					Shop shop = MyGson.getInstance().fromJson(shopKey,
+							Shop.class);
+					Constants.shop = shop;
 
 					Toast.makeText(this, result.getResultInfo(),
 							Toast.LENGTH_LONG).show();
-					Constants.user.saveUserInfo(this);// 保存用户信息
+					Constants.user.saveInstance(this);// 保存用户信息
+					Constants.shop.saveInstance(this);// 保存商店信息
 
-					Intent intent = new Intent(this, MainActivity.class);
-					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-					startActivity(intent);
-					this.finish();
+					toMainActivity();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -118,5 +136,12 @@ public class LoginActivity extends Activity implements OnClickListener,
 		} else {
 			msgDialog.setMessage(result.getResultInfo()).show();
 		}
+	}
+
+	private void toMainActivity() {
+		Intent intent = new Intent(this, MainActivity.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		startActivity(intent);
+		this.finish();
 	}
 }

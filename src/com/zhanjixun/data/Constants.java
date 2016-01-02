@@ -3,6 +3,7 @@ package com.zhanjixun.data;
 import android.os.Environment;
 
 import com.zhanjixun.domain.BaseResult;
+import com.zhanjixun.domain.Shop;
 import com.zhanjixun.domain.User;
 
 public class Constants {
@@ -12,12 +13,13 @@ public class Constants {
 
 	public static final String SP_USER = "SP_USER";
 	public static final String SP_SAIL_MODEL = "SP_SAIL_MODEL";
-	
+	public static final String SP_SHOP = "SP_SHOP";
+
 	/**
 	 * 当前登录用户，需要文件保留，并在开启软件时候初始化
 	 */
 	public static User user;
-
+	public static Shop shop;
 	/**
 	 * 航行模式，需要文件保留，并在开启软件时候初始化
 	 */

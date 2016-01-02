@@ -5,8 +5,12 @@
     android:orientation="vertical" >
 
     <com.zhanjixun.views.ReflashListView
+        android:id="@+id/fragment_order_content_data"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:divider="@color/page_bg"
+        android:dividerHeight="20dp"
+        android:scrollbars="none" >
     </com.zhanjixun.views.ReflashListView>
 
 </LinearLayout>
