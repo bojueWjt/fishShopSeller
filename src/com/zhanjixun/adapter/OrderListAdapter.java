@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.zhanjixun.R;
 import com.zhanjixun.activity.OrderInfoActivity;
 import com.zhanjixun.data.IC;
-import com.zhanjixun.domain.Good;
+import com.zhanjixun.domain.OrderGood;
 import com.zhanjixun.domain.Order;
 import com.zhanjixun.utils.UnitUtil;
 
@@ -82,7 +82,7 @@ public class OrderListAdapter extends BaseAdapter {
 		}
 		vh.buyerName.setText(order.getBuyerName());
 		// º”‘ÿ…Ã∆∑Õº∆¨
-		Good good = order.getOrdersDetail().get(0);
+		OrderGood good = order.getOrdersDetail().get(0);
 		IC.getInstance().setForegound(good.getGoodsPhoto(), vh.goodImage);
 
 		vh.goodName.setText(good.getGoodsName() + "");

@@ -8,6 +8,7 @@
     <FrameLayout style="@style/TitleTheme" >
 
         <TextView
+            android:id="@+id/activity_addgood_back"
             style="@style/TitleLeftTheme"
             android:clickable="true"
             android:drawableLeft="@drawable/title_back"
@@ -16,7 +17,7 @@
             android:text="首页" />
 
         <TextView
-            android:id="@+id/text_activity_goodlist_title"
+            android:id="@+id/activity_addgood_titletext"
             style="@style/TitleMiddleTheme"
             android:text="选择类别" />
 
@@ -26,5 +27,28 @@
             android:onClick="onNext"
             android:text="下一步" />
     </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/activity_addgood_leadtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:text="请选择商品类别："
+            android:textSize="@dimen/title_text_size" />
+
+        <GridView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:scrollbars="none" >
+        </GridView>
+    </LinearLayout>
 
 </LinearLayout>

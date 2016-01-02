@@ -55,11 +55,11 @@ public class HttpConnection {
 
 	public static String doPOSTMethod(String url, Map<String, String> parames)
 			throws MalformedURLException, IOException {
-		LogCat.verbose(url);
+
 		String result = null;
 		HttpURLConnection connection = getDefultHttpURLConnection(url, "POST");
 		connection.setDoOutput(true);
-		LogCat.verbose(parames != null ? parames.toString() : "");
+
 		if (parames != null) {
 			connection.getOutputStream().write(
 					HttpUtils.getPOSTMethodParamesAsBytes(parames));
@@ -70,6 +70,8 @@ public class HttpConnection {
 		if (responseCode == 200) {
 			result = HttpUtils.getResponseAsString(connection.getInputStream(),
 					"UTF-8");
+			LogCat.verbose(url);
+			LogCat.verbose(parames != null ? parames.toString() : "");
 			LogCat.verbose(result);
 		} else {
 			LogCat.verbose("«Î«Û ß∞‹£∫" + responseCode);

@@ -48,10 +48,10 @@ public class DC extends DataCenter {
 	 * @param index
 	 */
 	public void onSell(OnDataReturnListener dataReturnListener,
-			String sellerId, int page, int index) {
+			String shopId, int page, int index) {
 		// 设计图：1发布商品.jpg
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("shopId", sellerId);
+		params.put("shopId", shopId);
 		params.put("pageInfo.indexPageNum", index + "");
 		params.put("pageInfo.size", page + "");
 		getDatasFromServer(TaskTag.Category,

@@ -1,6 +1,6 @@
 package com.zhanjixun.domain;
 
-public class Good {
+public class OrderGood {
 	private String ordersDetailId;
 	private String categoryId;
 	private String goodsId;

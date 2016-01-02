@@ -3,6 +3,12 @@ package com.zhanjixun.views;
 import android.content.Context;
 import android.view.View.OnClickListener;
 
+/**
+ * 确认对话框，两个button
+ * 
+ * @author 詹命天子
+ *
+ */
 public class ConfirmDialog extends MessageDialog {
 
 	public ConfirmDialog(Context context, String msg) {

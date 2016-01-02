@@ -23,7 +23,7 @@ public class Order {
 	private Double totalprice;
 	private String userName;
 	private Date createTime;
-	private List<Good> ordersDetail;
+	private List<OrderGood> ordersDetail;
 	private String version;
 	private Boolean isDelete;
 	private String userId;
@@ -182,7 +182,7 @@ public class Order {
 	/**
 	 * @return ordersDetail
 	 */
-	public List<Good> getOrdersDetail() {
+	public List<OrderGood> getOrdersDetail() {
 		return ordersDetail;
 	}
 
@@ -190,7 +190,7 @@ public class Order {
 	 * @param ordersDetail
 	 *            ÒªÉèÖÃµÄ ordersDetail
 	 */
-	public void setOrdersDetail(List<Good> ordersDetail) {
+	public void setOrdersDetail(List<OrderGood> ordersDetail) {
 		this.ordersDetail = ordersDetail;
 	}
 

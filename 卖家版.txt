@@ -1,0 +1,242 @@
+test-->success
+shop_getCategoryWithTotalNumber.action
+参数：shopId 商家id
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：1发布商品.jpg
+
+test-->success
+goods_deletePointCategoryGoods.action
+参数：categoryId 类别Id
+	shopId 	        商家id
+图片：1发布商品-删除鱼货.jpg
+
+test-->success
+category_getTopCategory.action
+参数：无
+图片：1发布商品-添加鱼货1.jpg
+
+test-->success
+cateogry_getNextLevelCategory.action
+参数：categoryId 父类别id
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：1发布商品-添加鱼货2.jpg
+
+test-->success
+category_getCategoryWithSku.action
+参数：categoryId 类别id 
+图片：1发布商品-添加鱼货3.jpg
+
+test-->success
+category_addGoods.action
+参数： category 类别对象："{\"categoryId\":1,\"shopId\":1,\"fishPhoto\":\"category/aaa.jpg\",\"skuArrayList\":[{\"skuId\":1,\"price\":34.5},{\"skuId\":2,\"price\":35.5}]}"
+	categoryFile.file 文件对象: new File("xxx");
+图片：1发布商品-添加鱼货4.jpg
+
+test-->success
+shop_getPointCategoryGoodsInfo.action
+参数：shopId
+	categoryId
+图片：5鱼货详情-出港状态.jpg
+
+test-->success
+goods_updateGoodPrice.action
+参数： goodsList : [{\"goodsId\":1,\"price\":366.5},{\"goodsId\":4,\"price\":336.5}]
+图片：7鱼货详情-修改价格.jpg
+
+test-->success
+goods_updateGoodNowNumber.action
+参数：goodsList : [{\"goodsId\":1,\"nowNumber\":34},{\"goodsId\":4,\"nowNumber\":55}]
+图片：6鱼货详情-更新产量.jpg
+
+test--success
+orders_setOrderNumber.action
+参数：ordersId    订单编号
+	orderNumber 订单快递编号
+图片：7商品订单-发货.jpg
+
+test-->success
+searecord_addSeaRecord.action
+参数 ：shopId : 1
+	startSeeTime : 2015-12-04 17:13:30
+	endSeeTime : 2015-12-05 17:13:30
+	shipportId : 1 //港口id,到时候选择港口
+图片：3发布商品-是否出港.jpg ，备注，改设计图不完善，
+
+test-->success
+searecord_aheadEndSeaing.action
+参数：shopId : 1
+	endSeeTime : 2015-12-05 17:13:30
+图片：9管理到港时间.jpg
+
+test-->success
+searecord_delayEndSeaing.action
+参数：shopId
+	endSeeTime
+图片：9管理到港时间.jpg
+
+test-->success
+searecord_booleanEndSeaing.action
+参数：shopId
+图片：9管理到港时间.jpg
+
+test-->success
+//出航的时候使用
+orders_getOrdersWithSeaRecord.action
+参数：shopId
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：1商品订单-非航行模式.jpg
+
+test-->success
+//回港的时候使用
+orders_getMyShopOrders.action
+参数：shopId
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：1商品订单-非航行模式.jpg
+
+test-->success
+orders_getShopUnPayOrders.action
+参数：shopId 
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：3商品订单-待付款.jpg
+
+test-->success
+orders_getShopUnSentOrders.action
+参数：shopId
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：4商品订单-待发货.jpg
+
+test-->success
+orders_getShopUngetOrders.action
+参数：shopId
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：5商品订单-已发货.jpg
+
+test-->success
+orders_getShopUnCommentOrders.action
+参数：shopId
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：6商品订单-待评价.jpg
+
+//后台支付接口
+orders_payForOrdersWithAlipay.action
+参数：ordersId
+
+//得到订单快递编号
+orders_getOrdersNumber.action
+参数：ordersId
+
+orders_getPointOrders.action
+
+//商家完成发货.
+orders_realSendOrders.action
+
+图片:4商品订单-待发货.jpg
+
+//用户完成收货
+orders_realGetOrders.action
+
+
+----------------------------------------------
+
+
+test-->success
+user_userLogin.action
+参数：用户手机phoneNumber 用户密码password
+图片：1登陆.jpg
+
+test-->success
+user_smsCodeOfRegister.action
+参数：用户手机phoneNumber
+图片：2注册.jpg(获取验证码)
+
+
+test-->success
+user_smsCodeOfRegister.action
+参数：用户手机phoneNumber
+图片：2注册.jpg(获取验证码)
+
+
+test-->success
+user_addUser.action
+参数：用户手机phoneNumber 用户密码password 验证码verifyCode
+图片：2注册.jpg(注册)
+
+
+test-->success
+fishman_authenticationFishman.action
+参数：图片文件fishmanFile（按身份证正面、背面、船舶证、n张船照的顺序），用户id :userId
+图片：4认证为渔户.jpg
+
+test-->success
+farmers_authenticationFarmer.action
+参数：图片文件fishmanFile（按身份证正面、背面、n张养殖场照的顺序），用户id :userId
+图片：5认证为养殖户.jpg
+
+
+test-->success
+user_smsCodeOfFound.action
+参数：用户手机phoneNumber
+图片：6找回密码1.jpg(获取验证码)
+
+test-->success
+user_confirmSmsVerifyCode.action
+参数：用户手机phoneNumber 验证码verifyCode
+图片：6找回密码1.jpg(验证 验证码)
+
+test-->success
+user_findPassword.action
+参数：用户手机phoneNumber 用户密码password 
+图片：7找回密码2.jpg
+
+test-->success
+user_updatePassword.action
+参数：用户id userId  旧密码 password  新密码 newPassword 
+图片：3商家信息-我的账户.jpg(修改密码)
+
+test-->success
+user_updateUserImg.action
+参数：用户id userId  图片文件userFile
+图片：3商家信息-我的账户.jpg(更改头像)
+
+
+test-->success
+shop_getShopCommentInfo.action
+参数：商店id： shopId
+图片：5商家信息-店铺评价.jpg(获取商店信息)
+
+test-->success
+comment_getShopComment.action
+参数：shopId
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：5商家信息-店铺评价.jpg(获取商店全部评论)
+
+test-->success
+comment_getGoodComment.action
+参数：shopId
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：5商家信息-店铺评价.jpg(获取商店好评)
+
+test-->success
+comment_getMidComment.action
+参数：shopId
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：5商家信息-店铺评价.jpg(获取商店中评)
+
+test-->success
+comment_getBedComment.action
+参数：shopId
+	pageInfo.indexPageNum
+	pageInfo.size
+图片：5商家信息-店铺评价.jpg(获取商店差评)
+
