@@ -1,8 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sc="http://schemas.android.com/apk/res/com.zhanjixun"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical" >
-    
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1.8" >
+
+        <ImageView
+            android:id="@+id/image_me_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#626262"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.2"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.zhanjixun.views.RoundImageView
+                android:id="@+id/img_me_face"
+                android:layout_width="250px"
+                android:layout_height="250px"
+                android:src="@drawable/user_face"
+                android:tag="face"
+                sc:type="circle" >
+            </com.zhanjixun.views.RoundImageView>
+
+            <TextView
+                android:id="@+id/text_me_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="用户名"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <com.zhanjixun.views.LineTextView
+            style="@style/LineTextView"
+            android:text="常用停港地点" />
+
+        <com.zhanjixun.views.LineTextView
+            style="@style/LineTextView"
+            android:text="我的店铺评价" />
+
+        <com.zhanjixun.views.LineTextView
+            style="@style/LineTextView"
+            android:text="店铺展示图片" />
+
+        <com.zhanjixun.views.LineTextView
+            style="@style/LineTextView"
+            android:text="设置起送价" />
+    </LinearLayout>
 
 </LinearLayout>

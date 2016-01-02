@@ -36,7 +36,9 @@
         </activity>
         <activity android:name="com.zhanjixun.activity.OrderInfoActivity" >
         </activity>
-        <activity android:name="com.zhanjixun.activity.MyInfoActivity" >
+        <activity android:name="com.zhanjixun.activity.UserInfoActivity" >
+        </activity>
+        <activity android:name="com.zhanjixun.activity.AddFishGoodActivity1" >
         </activity>
     </application>
 

@@ -1,7 +1,7 @@
 package com.zhanjixun.fragment;
 
 import com.zhanjixun.R;
-import com.zhanjixun.activity.MyInfoActivity;
+import com.zhanjixun.activity.UserInfoActivity;
 import com.zhanjixun.data.Constants;
 import com.zhanjixun.data.IC;
 import com.zhanjixun.views.RoundImageView;
@@ -54,7 +54,7 @@ public class FarmersFragment extends Fragment implements OnClickListener {
 	public void onClick(View v) {
 		String tag = (String) v.getTag();
 		if (tag.equals("face")) {
-			Intent intent = new Intent(getActivity(), MyInfoActivity.class);
+			Intent intent = new Intent(getActivity(), UserInfoActivity.class);
 			getActivity().startActivity(intent);
 		}
 	}

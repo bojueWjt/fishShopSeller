@@ -55,131 +55,20 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:background="#FFFFFF"
+        android:background="@android:color/white"
         android:orientation="vertical" >
 
-        <LinearLayout
-            android:id="@+id/linear_me_address"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:orientation="horizontal"
-            android:tag="address" >
+        <com.zhanjixun.views.LineTextView
+            style="@style/LineTextView"
+            android:text="我的店铺评价" />
 
-            <TextView
-                android:id="@+id/text_me_address"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:paddingTop="10dp"
-                android:tag="address"
-                android:text="我的店铺评价"
-                android:textColor="#000000"
-                android:textSize="15sp" />
+        <com.zhanjixun.views.LineTextView
+            style="@style/LineTextView"
+            android:text="店铺展示图片" />
 
-            <ImageView
-                android:id="@+id/image_me_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/me_right"
-                android:paddingEnd="10dp"
-                android:paddingLeft="0dp"
-                android:paddingRight="10dp"
-                android:paddingStart="0dp"
-                android:tag="address" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/page_bg" />
-
-        <LinearLayout
-            android:id="@+id/linear_me_comment"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:orientation="horizontal"
-            android:tag="comment" >
-
-            <TextView
-                android:id="@+id/text_me_comment"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:paddingTop="10dp"
-                android:tag="comment"
-                android:text="店铺展示图片"
-                android:textColor="#000000"
-                android:textSize="15sp" />
-
-            <ImageView
-                android:id="@+id/image_me_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/me_right"
-                android:paddingEnd="10dp"
-                android:paddingLeft="0dp"
-                android:paddingRight="10dp"
-                android:paddingStart="0dp"
-                android:tag="comment" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/page_bg" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:orientation="horizontal"
-            android:tag="comment" >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:paddingTop="10dp"
-                android:tag="comment"
-                android:text="设置起送价"
-                android:textColor="#000000"
-                android:textSize="15sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/me_right"
-                android:paddingEnd="10dp"
-                android:paddingLeft="0dp"
-                android:paddingRight="10dp"
-                android:paddingStart="0dp"
-                android:tag="comment" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/page_bg" />
+        <com.zhanjixun.views.LineTextView
+            style="@style/LineTextView"
+            android:text="设置起送价" />
     </LinearLayout>
 
 </LinearLayout>

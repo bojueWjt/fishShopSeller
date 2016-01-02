@@ -2,7 +2,65 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/page_bg"
     android:orientation="vertical" >
-    
+
+    <FrameLayout style="@style/TitleTheme" >
+
+        <TextView
+            style="@style/TitleLeftTheme"
+            android:clickable="true"
+            android:drawableLeft="@drawable/title_back"
+            android:drawableStart="@drawable/title_back"
+            android:onClick="onBack"
+            android:text="我的" />
+
+        <TextView
+            android:id="@+id/text_activity_goodlist_title"
+            style="@style/TitleMiddleTheme"
+            android:text="我的账户" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <TextView
+        style="@style/WhiteTextView"
+        android:text="我的头像" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <TextView
+        style="@style/WhiteTextView"
+        android:text="我的昵称" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <TextView
+        style="@style/WhiteTextView"
+        android:text="帐号密码" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <TextView
+        style="@style/WhiteTextView"
+        android:text="已绑定手机" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <Button
+        style="@style/myButton"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:text="退出当前帐号" />
 
 </LinearLayout>
