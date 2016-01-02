@@ -10,7 +10,9 @@ public class SPUtil {
 			String defValue) {
 		SharedPreferences sp = context.getSharedPreferences(name,
 				Context.MODE_PRIVATE);
-		return sp.getString(key, defValue);
+		String spString = sp.getString(key, defValue);
+		LogCat.info("¶ÁÈ¡SP:" + spString);
+		return spString;
 	}
 
 	public static boolean saveString(Context context, String name, String key,
@@ -26,7 +28,6 @@ public class SPUtil {
 	public static boolean deleteSP(Context context, String name) {
 		SharedPreferences sp = context.getSharedPreferences(name,
 				Context.MODE_PRIVATE);
-
 		boolean delete = sp.edit().clear().commit();
 		LogCat.verbose("É¾³ýSharedPreferences:" + delete);
 		return delete;

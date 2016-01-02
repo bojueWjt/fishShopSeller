@@ -7,6 +7,7 @@ public class ConfirmDialog extends MessageDialog {
 
 	public ConfirmDialog(Context context, String msg) {
 		super(context, msg);
+		dialog.setCancelable(true);
 	}
 
 	public void setPositiveButton(String text, OnClickListener l) {

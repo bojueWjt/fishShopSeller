@@ -61,6 +61,7 @@
         style="@style/myButton"
         android:layout_width="match_parent"
         android:layout_margin="20dp"
+        android:onClick="onExit"
         android:text="退出当前帐号" />
 
 </LinearLayout>

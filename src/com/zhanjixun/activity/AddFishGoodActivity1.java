@@ -1,14 +1,18 @@
 package com.zhanjixun.activity;
 
-import com.zhanjixun.R;
-
-import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
-public class AddFishGoodActivity1 extends Activity {
+import com.zhanjixun.R;
+import com.zhanjixun.base.BackActivity;
+
+public class AddFishGoodActivity1 extends BackActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_addgood_1);
+	}
+
+	public void onNext(View v) {
 	}
 }

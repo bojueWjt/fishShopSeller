@@ -11,6 +11,10 @@
         <TextView
             style="@style/TitleMiddleTheme"
             android:text="发布商品" />
+
+        <TextView
+            style="@style/TitleRightTheme"
+            android:text="删除鱼货" />
     </FrameLayout>
 
     <FrameLayout
@@ -29,7 +33,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/add_fish_good" />
+                android:src="@drawable/add_fish_good"
+                android:tag="AddGood" />
         </RelativeLayout>
 
         <LinearLayout

@@ -1,5 +1,6 @@
 package com.zhanjixun.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.zhanjixun.R;
+import com.zhanjixun.activity.AddFishGoodActivity1;
 
 public class MainFragment extends Fragment implements OnClickListener {
 
@@ -34,5 +36,11 @@ public class MainFragment extends Fragment implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		String tag = (String) v.getTag();
+		if (tag.equals("AddGood")) {
+			Intent intent = new Intent(getActivity(),
+					AddFishGoodActivity1.class);
+			getActivity().startActivity(intent);
+		}
 	}
 }
