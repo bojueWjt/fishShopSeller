@@ -42,6 +42,14 @@
         </activity>
         <activity android:name="com.zhanjixun.activity.AddFishGoodActivity2" >
         </activity>
+        <activity android:name="com.zhanjixun.activity.AddGoodPreviewActivity" >
+        </activity>
+        <activity android:name="com.zhanjixun.activity.SetPriceActivity" >
+        </activity>
+        <activity android:name="com.zhanjixun.activity.SentGoodActivity" >
+        </activity>
+        <activity android:name="com.zhanjixun.activity.LogisiticeActivity" >
+        </activity>
     </application>
 
 </manifest>

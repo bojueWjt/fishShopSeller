@@ -28,16 +28,24 @@ public class OrderContentFragment extends Fragment implements
 		OnRefreshListener, OnDataReturnListener {
 	private int index = 1;
 	private static final int page = 7;
-
+	/**
+	 * 0全部 1待付款 2待发货 3待签收 4待评论
+	 */
 	private int tag = 0;
 	private ReflashListView mListView;
 
 	private List<Order> orders = new ArrayList<Order>();
 	private OrderListAdapter adapter;
 	private LoadingDialog dialog;
-	private String shopId;
 	private MessageDialog msg;
 
+	private String shopId;
+
+	/**
+	 * 
+	 * @param tag
+	 *            要加载的页面，0全部 1待付款 2待发货 3待签收 4待评论
+	 */
 	public OrderContentFragment(int tag) {
 		this.tag = tag;
 	}

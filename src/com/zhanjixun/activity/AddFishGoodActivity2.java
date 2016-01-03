@@ -1,5 +1,6 @@
 package com.zhanjixun.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -31,5 +32,8 @@ public class AddFishGoodActivity2 extends BackActivity {
 	}
 
 	public void onNext(View v) {
+		Intent intent = new Intent(this, SetPriceActivity.class);
+		intent.putExtra("", "");
+		startActivity(intent);
 	}
 }

@@ -59,8 +59,8 @@ public class ThemeDialog extends Dialog {
 		WindowManager wm = (WindowManager) getContext().getSystemService(
 				Context.WINDOW_SERVICE);
 		Display d = wm.getDefaultDisplay();
-		lp.width = (int) (d.getWidth() * width); 
-		lp.height = (int) (d.getHeight() * height); 
+		lp.width = (int) (d.getWidth() * width);
+		lp.height = (int) (d.getHeight() * height);
 		dialogWindow.setAttributes(lp);
 	}
 

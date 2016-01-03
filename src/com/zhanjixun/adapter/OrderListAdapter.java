@@ -2,6 +2,7 @@ package com.zhanjixun.adapter;
 
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -49,9 +50,9 @@ public class OrderListAdapter extends BaseAdapter {
 		return position;
 	}
 
+	@SuppressLint("InflateParams")
 	@Override
 	public View getView(int position, View v, ViewGroup parent) {
-		Order order = orders.get(position);
 		ViewHolder vh = null;
 		if (v == null) {
 			vh = new ViewHolder();
@@ -59,6 +60,8 @@ public class OrderListAdapter extends BaseAdapter {
 					null);
 			vh.buyerName = (TextView) v
 					.findViewById(R.id.order_home_item_shopTitle_name);
+			vh.orderState = (TextView) v
+					.findViewById(R.id.order_home_item_order_state);
 			vh.goodImage = (ImageView) v
 					.findViewById(R.id.order_home_item_shop_image);
 			vh.allPiece = (TextView) v
@@ -80,11 +83,35 @@ public class OrderListAdapter extends BaseAdapter {
 			vh = (ViewHolder) v.getTag();
 			v.setTag(vh);
 		}
+		Order order = orders.get(position);
+		initView(order, vh);
+		v.setOnClickListener(new MyOnClickListener(order.getOrdersId()));
+		return v;
+	}
+
+	private void initView(Order order, ViewHolder vh) {
 		vh.buyerName.setText(order.getBuyerName());
-		// 加载商品图片
 		OrderGood good = order.getOrdersDetail().get(0);
 		IC.getInstance().setForegound(good.getGoodsPhoto(), vh.goodImage);
-
+		switch (order.getState()) {
+		case Order.state_un_pay:
+			vh.orderState.setText("等待买家付款");
+			break;
+		case Order.state_un_sent:
+			vh.orderState.setText("等待卖家发货");
+			break;
+		case Order.state_un_get:
+			vh.orderState.setText("等待买家签收");
+			break;
+		case Order.state_un_commet:
+			vh.orderState.setText("等待买家评论");
+			break;
+		case Order.state_finish:
+			vh.orderState.setText("已完成");
+			break;
+		default:
+			break;
+		}
 		vh.goodName.setText(good.getGoodsName() + "");
 		vh.goodSize.setText(good.getSku() + "");
 		vh.goodPirce.setText(UnitUtil.toRMB(good.getPrice()) + "/"
@@ -95,8 +122,6 @@ public class OrderListAdapter extends BaseAdapter {
 		vh.allPiece.setText(UnitUtil.toRMB(order.getTotalprice()));
 		vh.postagePrice.setText("(含运费"
 				+ UnitUtil.toRMB(order.getPostagePrice()) + ")");
-		v.setOnClickListener(new MyOnClickListener(order.getOrdersId()));
-		return v;
 	}
 
 	private class MyOnClickListener implements View.OnClickListener {
@@ -114,11 +139,15 @@ public class OrderListAdapter extends BaseAdapter {
 		}
 	}
 
-	final class ViewHolder {
+	private final class ViewHolder {
 		/**
 		 * 商品店名标题
 		 */
 		TextView buyerName;
+		/**
+		 * 订单状态
+		 */
+		TextView orderState;
 		/**
 		 * 商品名
 		 */

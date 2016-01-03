@@ -47,8 +47,8 @@ public class DC extends DataCenter {
 	 * @param page
 	 * @param index
 	 */
-	public void onSell(OnDataReturnListener dataReturnListener,
-			String shopId, int page, int index) {
+	public void onSell(OnDataReturnListener dataReturnListener, String shopId,
+			int page, int index) {
 		// 设计图：1发布商品.jpg
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("shopId", shopId);
@@ -172,5 +172,65 @@ public class DC extends DataCenter {
 		getDatasFromServer(TaskTag.SeaRecord,
 				"orders_getOrdersWithSeaRecord.action", params,
 				dataReturnListener);
+	}
+
+	/**
+	 * 获取订单信息
+	 * 
+	 * @param dataReturnListener
+	 * @param orderId
+	 */
+	public void getOrderInfo(OnDataReturnListener dataReturnListener,
+			String orderId) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("ordersId", orderId);
+		getDatasFromServer(TaskTag.ORDER_INFO, "orders_getPointOrders.action",
+				params, dataReturnListener);
+	}
+
+	/**
+	 * 填写发货快递单号
+	 * 
+	 * @param dataReturnListener
+	 * @param orderId
+	 * @param orderNumber
+	 */
+	public void setOrderExpressNum(OnDataReturnListener dataReturnListener,
+			String orderId, String orderNumber) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("ordersId", orderId);
+		params.put("orderNumber", orderNumber);
+		getDatasFromServer(TaskTag.setOrderExpressNum,
+				"orders_setOrderNumber.action", params, dataReturnListener);
+	}
+
+	/**
+	 * 获取订单的快递号
+	 * 
+	 * @param dataReturnListener
+	 * @param ordersId
+	 */
+	public void orderPostCode(OnDataReturnListener dataReturnListener,
+			String ordersId) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("ordersId", ordersId);
+		getDatasFromServer(TaskTag.ORDER_POST_CODE,
+				"orders_getOrderNumber.action", params, dataReturnListener);
+	}
+
+	/**
+	 * 获取物流信息
+	 * 
+	 * @param dataReturnListener
+	 * @param postid
+	 * @param type
+	 */
+	public void getLogistic(OnDataReturnListener dataReturnListener,
+			String postid) {
+		// http://www.kuaidi100.com/query?type=zhongtong&postid=719121392152
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("type", "zhongtong");
+		params.put("postid", postid);
+		getLogistics(TaskTag.LOGISTIC, params, dataReturnListener);
 	}
 }

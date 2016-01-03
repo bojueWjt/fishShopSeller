@@ -19,9 +19,9 @@ public class SPUtil {
 			String value) {
 		SharedPreferences sp = context.getSharedPreferences(name,
 				Context.MODE_PRIVATE);
-
 		Editor edit = sp.edit();
 		edit.putString(key, value);
+		LogCat.info("Ð´ÈëSP£º[" + key + "," + value + "]");
 		return edit.commit();
 	}
 
@@ -29,7 +29,7 @@ public class SPUtil {
 		SharedPreferences sp = context.getSharedPreferences(name,
 				Context.MODE_PRIVATE);
 		boolean delete = sp.edit().clear().commit();
-		LogCat.verbose("É¾³ýSharedPreferences:" + delete);
+		LogCat.verbose("É¾³ýSP:" + name + ",×´Ì¬£º" + delete);
 		return delete;
 	}
 }

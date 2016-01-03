@@ -3,6 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
+    <FrameLayout style="@style/TitleTheme" >
+
+        <TextView
+            style="@style/TitleLeftTheme"
+            android:clickable="true"
+            android:drawableLeft="@drawable/title_back"
+            android:drawableStart="@drawable/title_back"
+            android:onClick="onBack"
+            android:text="种类" />
+
+        <TextView
+            style="@style/TitleMiddleTheme"
+            android:text="设置价格" />
+
+        <TextView
+            style="@style/TitleRightTheme"
+            android:clickable="true"
+            android:onClick="onNext"
+            android:text="预览" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/page_bg"
+        android:orientation="vertical"
+        android:padding="20dp" >
+    </LinearLayout>
 
 </LinearLayout>

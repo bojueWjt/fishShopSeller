@@ -3,6 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
+    <FrameLayout style="@style/TitleTheme" >
+
+        <TextView
+            style="@style/TitleLeftTheme"
+            android:clickable="true"
+            android:drawableLeft="@drawable/title_back"
+            android:drawableStart="@drawable/title_back"
+            android:onClick="onBack"
+            android:text="设置价格" />
+
+        <TextView
+            style="@style/TitleMiddleTheme"
+            android:text="添加鱼货" />
+    </FrameLayout>
 
 </LinearLayout>

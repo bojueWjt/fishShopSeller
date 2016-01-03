@@ -16,7 +16,7 @@ public class MessageDialog {
 		messageTv = initView(context, msg);
 		dialog.setView(messageTv);
 		dialog.setPositiveButton("È·¶¨", null);
-		dialog.setDialogSize(0.8, 0.4);
+		dialog.setDialogSize(0.85, 0.4);
 	}
 
 	private TextView initView(Context context, String msg) {

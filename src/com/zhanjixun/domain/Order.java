@@ -20,6 +20,7 @@ public class Order {
 	private String shopId;
 	private String shopKeeperName;
 	private Integer state;
+	private String shopPhoto;
 	private Double totalprice;
 	private String userName;
 	private Date createTime;
@@ -252,5 +253,19 @@ public class Order {
 	 */
 	public void setBuyerName(String buyerName) {
 		this.buyerName = buyerName;
+	}
+
+	/**
+	 * @return shopPhoto
+	 */
+	public String getShopPhoto() {
+		return shopPhoto;
+	}
+
+	/**
+	 * @param shopPhoto ÒªÉèÖÃµÄ shopPhoto
+	 */
+	public void setShopPhoto(String shopPhoto) {
+		this.shopPhoto = shopPhoto;
 	}
 }
