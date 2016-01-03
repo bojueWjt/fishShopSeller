@@ -10,9 +10,9 @@ public class SPUtil {
 			String defValue) {
 		SharedPreferences sp = context.getSharedPreferences(name,
 				Context.MODE_PRIVATE);
-		String spString = sp.getString(key, defValue);
-		LogCat.info("∂¡»°SP:" + spString);
-		return spString;
+		String value = sp.getString(key, defValue);
+		LogCat.info("∂¡»°SP:" + name + value);
+		return value;
 	}
 
 	public static boolean saveString(Context context, String name, String key,

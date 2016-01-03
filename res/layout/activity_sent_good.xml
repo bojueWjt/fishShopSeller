@@ -3,6 +3,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
+    <FrameLayout style="@style/TitleTheme" >
+
+        <TextView
+            style="@style/TitleLeftTheme"
+            android:clickable="true"
+            android:drawableLeft="@drawable/title_back"
+            android:drawableStart="@drawable/title_back"
+            android:onClick="onBack"
+            android:text="订单详情" />
+
+        <TextView
+            style="@style/TitleMiddleTheme"
+            android:text="发货" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/page_bg"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="请输入快递单号"
+            android:textSize="@dimen/title_text_size" />
+
+        <EditText
+            android:id="@+id/activity_edittext_code"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#FFFFFF"
+            android:inputType="number"
+            android:padding="10dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/page_bg"
+                android:text="或 "
+                android:textSize="@dimen/title_text_size" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/scan_code"
+            android:gravity="center"
+            android:onClick="onScan"
+            android:text="扫一扫"
+            android:textSize="@dimen/title_text_size" />
+
+        <Button
+            style="@style/myButton"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:onClick="onCommit"
+            android:text="确定"
+            android:textSize="@dimen/title_text_size" />
+    </LinearLayout>
 
 </LinearLayout>

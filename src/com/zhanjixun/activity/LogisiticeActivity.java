@@ -32,21 +32,14 @@ import com.zhanjixun.views.MessageDialog;
 public class LogisiticeActivity extends BackActivity implements
 		OnDataReturnListener {
 
-	// 物流详情信息
 	private ListView listView;
-	// 商品图片
 	private ImageView order_image;
-	// 物流状态
 	private TextView logistice_status;
-	// 物流编号
 	private TextView logistice_code;
-
 	private Button logistics_Btn;
-	// 页面hear的数据
 	private String orderId;
 	private LoadingDialog dialog;
 	private String ordersNumber;
-	// Btn状态
 	private Integer integer = 0;
 	private MessageDialog msgDialog;
 
@@ -134,7 +127,6 @@ public class LogisiticeActivity extends BackActivity implements
 					listView.setAdapter(timeAdapter);
 					integer = i.getState();
 					initState();
-					// logistics_Btn.setOnClickListener(this);
 					setListViewHeightBasedOnChildren(listView);
 				} else {
 					msgDialog.setMessage(i.getMessage());
@@ -147,17 +139,7 @@ public class LogisiticeActivity extends BackActivity implements
 				logistics_Btn.setVisibility(View.INVISIBLE);
 			}
 		}
-		// else if (TaskTag.ENSUREGET.equals(taskTag)) {
-		// msgDialog.setMessage(result.getResultInfo());
-		// msgDialog.show();
-		// }
 	}
-
-	// @Override
-	// public void onClick(View v) {
-	// dialog.show();
-	// DC.getInstance().ensureGet(this, orderId);
-	// }
 
 	protected void setListViewHeightBasedOnChildren(ListView listView) {
 		if (listView == null)

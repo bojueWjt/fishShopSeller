@@ -180,12 +180,12 @@ public class OrderInfoActivity extends BackActivity implements
 
 	@Override
 	public void onClick(View v) {
-		String tag = (String) v.getTag();
-		if (tag.equals(Order.state_un_sent)) {
+		int tag = (Integer) v.getTag();
+		if (tag == Order.state_un_sent) {
 			Intent intent = new Intent(this, SentGoodActivity.class);
 			intent.putExtra("orderId", orderId);
 			startActivity(intent);
-		} else if (tag.equals(Order.state_un_get)) {
+		} else if (tag == Order.state_un_get) {
 			Intent intent = new Intent(this, LogisiticeActivity.class);
 			try {
 				intent.putExtra("orderId", orderId);
